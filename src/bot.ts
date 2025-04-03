@@ -7,7 +7,7 @@ const bot = new Telegraf(BOT_TOKEN);
 
 bot.start((ctx) => {
     ctx.replyWithPhoto(
-        { source: './assets/wedding.JPG' },
+        { source: '../assets/wedding.jpg' },
         {
             caption: 'Нажми на кнопку ниже 💖',
             reply_markup: {
