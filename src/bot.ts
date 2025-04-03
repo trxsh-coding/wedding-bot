@@ -1,5 +1,9 @@
 import 'dotenv/config';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const imagePath = path.join(__dirname, '../assets/wedding.jpg');
 import { Telegraf } from 'telegraf';
 
 const BOT_TOKEN = process.env.BOT_TOKEN!;
@@ -7,7 +11,7 @@ const bot = new Telegraf(BOT_TOKEN);
 
 bot.start((ctx) => {
     ctx.replyWithPhoto(
-        { source: 'wedding.jpg' },
+        { source: imagePath },
         {
             caption: 'Нажми на кнопку ниже 💖',
             reply_markup: {
